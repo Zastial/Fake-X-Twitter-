@@ -1,0 +1,85 @@
+@import 'tweet.css';
+
+@mixin flex-justify($justify: center) {
+    display: flex;
+    justify-content: $justify;
+}
+  
+@mixin mobile-container {
+    width: 100%;
+    max-width: 375px;
+    height: 100%;
+}
+  
+@mixin standard-padding($padding: 1rem) {
+    padding: $padding;
+}
+  
+@mixin fixed-width-element($bottom: 0, $padding: 1rem) {
+    position: fixed;
+    bottom: $bottom;
+    width: calc(100% - #{2 * $padding});
+    max-width: 343px;
+    padding: $padding;
+}
+  
+@mixin twitter-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 0.4rem 1rem;
+    border-bottom: 1px solid #E1E8ED;
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+    body {
+      @include flex-justify(center);
+      background-color: #F2F2F2;
+  
+      .mobile-size {
+        @include mobile-container;
+        background-color: white;
+  
+        img {
+          cursor: pointer;
+        }
+  
+        nav {
+          @include flex-justify(space-between);
+  
+          .left, .right {
+            align-items: center;
+            @include standard-padding;
+          }
+        }
+  
+        .twitter-navbar {
+          @include twitter-navbar;
+        }
+  
+        .tweets-container {
+          margin-bottom: 3rem;
+        }
+  
+        .add-tweet {
+          @include flex-justify;
+          @include fixed-width-element(3rem);
+          right: 16rem;
+          margin-right: 9rem
+        }
+  
+        footer {
+          @include flex-justify(space-between);
+          @include fixed-width-element;
+          left: 0;
+          right: 0;
+          background-color: white;
+          margin: 0 auto;
+        }
+      }
+    }
+}

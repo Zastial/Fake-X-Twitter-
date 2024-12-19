@@ -1,0 +1,123 @@
+@mixin text-blue {
+    color: rgb(0, 157, 255);
+}
+
+@mixin text-grey {
+    color: grey;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-layout($direction: row, $justify: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin small-image {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+@mixin tweet-border {
+    border: 1px solid #E1E8ED;
+}
+
+.tweet {
+    @include flex-layout;
+    padding: 1rem 1rem 0.3rem 1rem;
+    border-bottom: 1px solid #E1E8ED;
+
+    .left {
+        @include flex-layout(column);
+        margin-right: 0.5rem;
+        text-align: right;
+        height: auto;
+
+        .line {
+            @include flex-center;
+            margin-bottom: 0.1rem;
+            height: 100%;
+
+            span {
+                @include tweet-border;
+                height: 100%;
+            }
+        }
+    
+        .min-profile-picture {  
+            @include flex-center;
+            padding-top: 0.2rem;
+
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+    
+    .right {
+        padding-bottom: 0.8rem;
+
+        .header-text {
+            font-size: 1rem;
+            @include text-grey;
+        }
+
+        .tweet-content-header {
+            @include flex-layout;
+            margin-right: 1rem;
+            margin-bottom: 0.2rem;
+            width: 120%;
+
+            .content-left {
+                @include flex-layout;
+                margin-left: 0;
+                margin-right: 3rem;
+
+                img {
+                    @include small-image;
+                    margin-right: 0.3rem;
+                    margin-top: 0.2rem;
+                }
+            }
+
+            p {
+                margin-right: 0.3rem;
+            }
+
+            .bold {
+                font-weight: bold;
+            }
+
+            .text-grey {
+                @include text-grey;
+            }
+        }
+
+        .text-blue {
+            @include text-blue;
+        }
+
+        .tweet-content-footer {
+            @include flex-layout($justify: space-between);
+            align-items: center;
+            padding-right: 3rem;
+            font-size: 13px;
+            @include text-grey;
+
+            img {
+                @include small-image;
+                margin-top: 0.4rem;
+            }
+        }
+
+        .thread {
+            margin-top: 0.5rem;
+        }
+    }
+}

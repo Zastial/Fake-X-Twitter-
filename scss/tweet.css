@@ -1,0 +1,93 @@
+.tweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1rem 1rem 0.3rem 1rem;
+  border-bottom: 1px solid #E1E8ED;
+}
+.tweet .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 0.5rem;
+  text-align: right;
+  height: auto;
+}
+.tweet .left .line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.1rem;
+  height: 100%;
+}
+.tweet .left .line span {
+  border: 1px solid #E1E8ED;
+  height: 100%;
+}
+.tweet .left .min-profile-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.2rem;
+}
+.tweet .left .min-profile-picture img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.tweet .right {
+  padding-bottom: 0.8rem;
+}
+.tweet .right .header-text {
+  font-size: 1rem;
+  color: grey;
+}
+.tweet .right .tweet-content-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-right: 1rem;
+  margin-bottom: 0.2rem;
+  width: 120%;
+}
+.tweet .right .tweet-content-header .content-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 0;
+  margin-right: 3rem;
+}
+.tweet .right .tweet-content-header .content-left img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.3rem;
+  margin-top: 0.2rem;
+}
+.tweet .right .tweet-content-header p {
+  margin-right: 0.3rem;
+}
+.tweet .right .tweet-content-header .bold {
+  font-weight: bold;
+}
+.tweet .right .tweet-content-header .text-grey {
+  color: grey;
+}
+.tweet .right .text-blue {
+  color: rgb(0, 157, 255);
+}
+.tweet .right .tweet-content-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 3rem;
+  font-size: 13px;
+  color: grey;
+}
+.tweet .right .tweet-content-footer img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+}
+.tweet .right .thread {
+  margin-top: 0.5rem;
+}/*# sourceMappingURL=tweet.css.map */
